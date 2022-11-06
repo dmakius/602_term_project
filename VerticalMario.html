@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Vertical Mario</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script src = "public/VerticalMario/js/phaser.min.js"></script>
+  <script src = "public/VerticalMario/js/bootState.js"></script>
+  <script src = "public/VerticalMario/js/PreloadState.js"></script>
+  <script src = "public/VerticalMario/js/MenuState.js"></script>
+  <script src = "public/VerticalMario/js/ScoreState.js"></script>
+  <script src = "public/VerticalMario/js/GameState.js"></script>
+  <script src = "public/VerticalMario/js/InputScore.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Mario.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/InitPlatforms.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Platforms.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Goomba.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Coin.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Spiny.js"></script>
+
+  <style>
+    canvas {
+      display : block;   
+      margin : auto;
+    
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div id="verticalMario"></div>
+      <script>
+        var VerticalMario = VerticalMario || {};
+        VerticalMario.game = new Phaser.Game(700, 500, Phaser.AUTO,'verticalMario');
+        VerticalMario.game.state.add('BootState', VerticalMario.BootState);
+        VerticalMario.game.state.add('PreloadState', VerticalMario.PreloadState);
+        VerticalMario.game.state.add('MenuState', VerticalMario.MenuState);
+        VerticalMario.game.state.add('GameState', VerticalMario.GameState);
+        VerticalMario.game.state.add('InputScoreState', VerticalMario.InputScoreState);
+        VerticalMario.game.state.add('ScoreState', VerticalMario.ScoreState);
+        VerticalMario.game.state.start('BootState');
+      </script>
+    </div>
+  </div>
+ 
+</body>
+</html>
