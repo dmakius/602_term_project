@@ -19,7 +19,7 @@ VerticalMario.MenuState = {
   update:function(){
     if(this.start.isDown){
       // this.game.state.start('GameState');
-      this.game.state.start('InputScoreState');
+      this.game.state.start('GameState');
     }
   }
 }

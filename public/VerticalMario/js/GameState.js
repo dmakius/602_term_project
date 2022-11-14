@@ -159,7 +159,7 @@ killSprite: function(badGuy){
 },
 
 restart: function(){
-  this.game.state.start('MenuState');
+  this.game.state.start('InputScoreState');
 },
 
 createInitialPlatform: function(){

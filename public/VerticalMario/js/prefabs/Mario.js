@@ -61,7 +61,7 @@ VerticalMario.Mario.prototype.update = function(){
 
     if(this.body.y >= 500){
       this.deadSound.play();
-      this.game.state.start('MenuState');
+      this.game.state.start('InputScoreState');
     }
 
   }
