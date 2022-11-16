@@ -18,7 +18,7 @@ export default class ScoreController{
         const hs = new HighScore({
             _id: new mongoose.Types.ObjectId(),
             name: req.body.name,
-            score: 1000
+            score: req.body.score
         });
     
         hs.save(function(err,result){

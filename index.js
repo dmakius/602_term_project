@@ -20,6 +20,6 @@ connection.on("error",(error)=>{
   console.log("Cant connect to DB");
   //console.log(error);
 });
-
-app.listen(8080);
+const port = process.env.PORT || 8080;
+app.listen(port);
 

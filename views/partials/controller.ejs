@@ -1,0 +1,70 @@
+<style>
+#shootBtn{
+	display:block;
+	margin:auto;
+}
+.glyphicon.glyphicon-one-fine-full-dot {
+    margin-bottom: -.8em;
+    overflow: hidden;
+}
+.glyphicon.glyphicon-one-fine-full-dot:before {
+    content:"\25cf";
+    font-size: 3em;
+}
+.glyphicon.glyphicon-one-fine-empty-dot {
+    margin-bottom: -.8em;
+    overflow: hidden;
+    margin-top: -25px;
+}
+.glyphicon.glyphicon-one-fine-empty-dot:before {
+    content:"\25cb";
+    font-size: 2em;
+}
+.roundButton{
+	height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid #000;
+}
+
+</style>	
+<br>
+<div  id="controller">
+	<div class = "row">
+		<div class= "col-xs-1 col-sm-1"></div>
+		<div class= "col-xs-6 col-sm-6">
+			<table>
+				<tr>
+					<td></td>
+					<td><button class = "roundButton" id = "upBtn"><span stlye="font-size: 50px;">&#x2191</span></button></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td><button class = "roundButton" id = "leftBtn"><spa>&#8592</spa></button></td>
+					<td></td>
+					<td><button class = "roundButton" id = "rightBtn"><span>&#8594</span></button></td>
+				</tr>
+				<tr>
+						<td></td>
+						<td><button class = "roundButton" id = "downBtn"><span>&#8595</span></button></td>
+						<td></td>
+				</tr> 
+			</table>
+		</div>
+				
+		<div class = "col-xs-4 col-sm-4">
+				<button id = "shootBtn" class="roundButton" style = "float:right; margin-top:20px;"><span>A</span></button>
+		</div>
+	</div>
+
+	<br>
+	<div class = "row">
+		
+		<div class = "col-xs-4 col-sm-4"></div>
+		<div class = "col-xs-4 col-sm-4">
+			<div id = "startBtn"  class = "btn btn-primary" style = "display:block; margin:auto;">
+				<span id = "startText">Start</span>
+		</div>
+		<div class = "col-xs-4 col-sm-4"></div>
+	</div>	
+</div>

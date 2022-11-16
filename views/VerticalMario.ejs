@@ -2,7 +2,10 @@
 <head>
   <%- include('./partials/head'); %>
   <title>Vertical Mario</title>
-  
+  <meta name = "viewport" 
+  content = "user-scalable = no">
+
+ 
   <script
   src="https://code.jquery.com/jquery-3.6.1.js"
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -20,7 +23,7 @@
   <script src = "public/VerticalMario/js/prefabs/Goomba.js"></script>
   <script src = "public/VerticalMario/js/prefabs/Coin.js"></script>
   <script src = "public/VerticalMario/js/prefabs/Spiny.js"></script>
-
+  
   <style>
     canvas {
       display : block;   
@@ -30,11 +33,12 @@
 
   </style>
 </head>
-<body>
+<body style="width:100%">
   <%- include('./partials/header'); %>
   <div class="container">
     <div class="row">
-      <div id="verticalMario"></div>
+      <br>
+      <div id="verticalMario" style="margin-top:20px;"></div>
       <script>
         var VerticalMario = VerticalMario || {};
         VerticalMario.game = new Phaser.Game(700, 500, Phaser.AUTO,'verticalMario');
@@ -45,9 +49,17 @@
         VerticalMario.game.state.add('InputScoreState', VerticalMario.InputScoreState);
         VerticalMario.game.state.add('ScoreState', VerticalMario.ScoreState);
         VerticalMario.game.state.start('BootState');
+
+        var pause = false, startGame = false, movingRight = false, movingLeft = false;
+	      var playerJump = false, alreadDead = false; var globalScore = 0;
       </script>
     </div>
+
+    <% if(mobile){ %>
+      <%- include('./partials/controller'); %>
+   <% } %>
+
   </div>
- 
+  <script src = "public/VerticalMario/js/VerticalMarioController.js"></script>
 </body>
 </html>

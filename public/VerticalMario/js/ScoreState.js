@@ -29,8 +29,6 @@ VerticalMario.ScoreState = {
         }
         
       }
-    
-   
 
     this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Replay", 28);
     this.continueSign.anchor.setTo(0.5);

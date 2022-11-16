@@ -31,15 +31,15 @@ VerticalMario.Mario.prototype.constructor = VerticalMario.Mario;
 
 VerticalMario.Mario.prototype.update = function(){
   if(this.dead == false){
-    if(this.cursors.up.isDown && this.body.wasTouching.down){
-     this.jumpSound.play();
-      this.body.velocity.y = -200;
-    }else if(this.cursors.left.isDown){
-      this.body.velocity.x = -100;
+    if(this.cursors.up.isDown && this.body.wasTouching.down ||playerJump){
+      this.jumpSound.play();
+      this.body.velocity.y = -220;
+    }else if(this.cursors.left.isDown || movingLeft){
+      this.body.velocity.x = -120;
       this.facingRight = false;
       this.animations.play('walkingLeft');
-    }else if(this.cursors.right.isDown){
-      this.body.velocity.x = 100;
+    }else if(this.cursors.right.isDown || movingRight){
+      this.body.velocity.x = 120;
       this.facingRight = true;
       this.animations.play('walkingRight');
     }else if(this.facingRight){
@@ -61,7 +61,16 @@ VerticalMario.Mario.prototype.update = function(){
 
     if(this.body.y >= 500){
       this.deadSound.play();
+      globalScore = this.score;
       this.game.state.start('InputScoreState');
+    }
+
+    //moving out of bounds
+    if(this.body.x >= 700){
+      this.body.x = -9;
+    }
+    if(this.body.x <= -10){
+      this.body.x = 700;
     }
 
   }

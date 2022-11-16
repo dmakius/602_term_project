@@ -3,13 +3,17 @@ import scoreController from "./controllers/score.controller.js";
 import userController from "./controllers/user.controller.js";
 import auth from "./middleware/auth.js";
 import loggedIn from "./middleware/loggedIn.js";
-
+import ExpressUserAgent from "express-useragent";
 const router = express.Router();
 
 router.get('/', async function (req, res) {
+    var source = req.headers['user-agent']
+    var ua = ExpressUserAgent.parse(source);
+    var isMobile = ua.isMobile
+
     var x = loggedIn(req, res);
     console.log(x);
-    res.render('VerticalMario',{loggedIn: x});
+    res.render('VerticalMario',{loggedIn: x, mobile: isMobile});
 });
 
 router.get('/admin', auth, function(req, res){

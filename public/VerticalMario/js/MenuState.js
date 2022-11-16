@@ -17,8 +17,7 @@ VerticalMario.MenuState = {
     this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
   },
   update:function(){
-    if(this.start.isDown){
-      // this.game.state.start('GameState');
+    if(this.start.isDown || startGame){
       this.game.state.start('GameState');
     }
   }
