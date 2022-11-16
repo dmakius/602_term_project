@@ -1,5 +1,5 @@
 var VerticalMario = VerticalMario || {};
-
+ 
 VerticalMario.PreloadState = {
   preload: function(){
     this.background = this.game.add.sprite(0,0, 'background');

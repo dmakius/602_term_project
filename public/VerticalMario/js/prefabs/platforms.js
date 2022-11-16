@@ -1,5 +1,5 @@
 var VerticalMario = VerticalMario || {}
-
+ 
 VerticalMario.Platforms  =  function(game, x , y){
   Phaser.Sprite.call(this, game, x, y, 'brick');
   this.anchor.setTo(0.5);
