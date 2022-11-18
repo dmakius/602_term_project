@@ -4,7 +4,7 @@ VerticalMario.ScoreState = {
     console.log("geting scores from API ->");
     $.ajax({
       type: "GET",
-      url: '/GetScores',
+      url: '/Score',
       async: false,
       success: function(response){
           VerticalMario.GameState.highScores = response;

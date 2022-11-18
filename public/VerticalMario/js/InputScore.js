@@ -2,11 +2,12 @@ var VerticalMario = VerticalMario || {};
 VerticalMario.InputScoreState = {
   create: function(){
     this.highScores = VerticalMario.GameState.highScores;
-
+    console.log(`INPUT Stage: score: ${VerticalMario.globalScore }`);
     //create score for game just played
     this.newScore = new Object();
     this.newScore.username = "YOU";
-    this.newScore.score = globalScore;
+    this.newScore.score = VerticalMario.globalScore ;
+    console.log(`INPUT Stage: score: ${ this.newScore.score}`);
 
 
     this.background = this.game.add.sprite(0,0, 'background');
@@ -36,7 +37,7 @@ VerticalMario.InputScoreState = {
         console.log(this.username.text);
         $.ajax({
             type: "POST",
-            url: '/highscore',
+            url: '/Score/Create',
             data:{
               name: this.username.text,
               score: this.newScore.score

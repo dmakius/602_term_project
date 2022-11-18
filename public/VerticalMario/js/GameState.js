@@ -135,6 +135,8 @@ playerCollision: function(badGuy, player){
     this.game.scoreBoard.setText("SCORE: " + player.score);
   }else{
     this.deadSound.play()
+    console.log(`score: ${player.score}`);
+    VerticalMario.globalScore = player.score;
     player.dead = true;
     player.animations.play('dead');
     player.body.velocity.x = 0;

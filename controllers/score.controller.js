@@ -5,58 +5,35 @@ export default class ScoreController{
     static async getScores(req, res){
         var results = null;
         HighScore.find({})
-        .then((data) => { 
-            results = data;
-            res.send(results)
-            });
+        .then((data) => { res.send(data)})
     }
 
     static async createScore(req, res){
-        console.log("saving score");
-        console.log((req.body.name));
-    
-        const hs = new HighScore({
+        console.log(`Saving Score ${req.body.name}`);
+        const newScore = new HighScore({
             _id: new mongoose.Types.ObjectId(),
             name: req.body.name,
             score: req.body.score
         });
     
-        hs.save(function(err,result){
-            if (err){
-                console.log(err);
-            }
-            else{
-                console.log(result)
-          
-            }
-        });
-    
-        res.send("hi score saved!!!!!");
-    
+        newScore.save()
+        .then(res.status(200).json({message:"hi score saved!!!!!"}))
+        .catch(error =>res.status(400).json({ message: "Failed to Save Score", error: error.message}));
     }
 
     static async deleteScore(req, res){
-        console.log("deleteing Score");
-        console.log(req.body);
-        HighScore.deleteOne({_id:req.body.id}).then(
-            (data) =>{
-                console.log(data);
-                res.send({status:200, id:req.body.id});
-            }
-        );
+        console.log(`Deleting Score ${req.body.id}`);
+        HighScore.deleteOne({_id:req.body.id})
+        .then(res.status(200).json({message: "Deleted Score Succesfully", scoreId: req.body.id,  flash_type:"alert-info"}))
+        .catch(error =>res.status(400).json({ message: "Failed to Delete Score", error: error.message, scoreId: req.body.id,  flash_type:"alert-danger" }));
     }
 
     static async updateScore(req, res){
-        console.log('updating score:' + req);
-        console.log(req.body.username);
-        console.log(req.body.score);
-        HighScore.updateOne({_id:req.body.id},
-            {$set:{name:req.body.username, score: req.body.score}}).then(
-                (data)=>{
-                    console.log(data);
-                }
-            );
-        res.send("updated sucesfull");
+        console.log(`Updating Score ${req.body.id}`);
+        HighScore.updateOne({_id:req.body.id},{$set:{name:req.body.username, score: req.body.score}})
+        .then(res.status(200).json({message: "Updated Score Succesfully",scoreId: req.body.id,  flash_type:"alert-success"}))
+        .catch(error =>res.status(400).json({ message: "Failed to Update Score", error: error.message , scoreId: req.body.id,  flash_type:"alert-danger"}));
+
     }
 }
     
