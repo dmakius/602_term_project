@@ -2,9 +2,9 @@
 <head>
   <%- include('./partials/head'); %>
   <title>Vertical Mario</title>
-  <meta name = "viewport" 
-  content = "user-scalable = no">
-
+  <!-- <meta name = "viewport" 
+  content = "user-scalable = no"> -->
+  <meta name="viewport" content="maximum-scale=1.0, user-scalable=0">
  
   <script
   src="https://code.jquery.com/jquery-3.6.1.js"
@@ -23,6 +23,7 @@
   <script src = "public/VerticalMario/js/prefabs/Goomba.js"></script>
   <script src = "public/VerticalMario/js/prefabs/Coin.js"></script>
   <script src = "public/VerticalMario/js/prefabs/Spiny.js"></script>
+  <script src = "public/VerticalMario/js/prefabs/Koopa.js"></script>
   
   <style>
     canvas {
@@ -52,12 +53,29 @@
         VerticalMario.game.state.start('BootState');
 
         var pause = false, startGame = false, movingRight = false, movingLeft = false;
-	      var playerJump = false, alreadDead = false; var globalScore = 0;
+	      var playerJump = false, alreadDead = false; var globalScore = 0; var mobileGame = false;
       </script>
     </div>
 
     <% if(mobile){ %>
       <%- include('./partials/controller'); %>
+      <script>
+        mobileGame = true;
+      </script>
+      <style>
+        html{-webkit-user-select: none; /* Safari 3.1+ */
+        -moz-user-select: none; /* Firefox 2+ */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; }/* Standard syntax */
+        html, body {
+          overscroll-behavior-y: none;
+        }
+
+        html, body {
+          position: fixed;
+          overflow: hidden;
+        }
+      </style>
    <% } %>
 
   </div>

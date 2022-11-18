@@ -12,6 +12,7 @@ VerticalMario.PreloadState = {
     this.game.load.spritesheet('mario', 'public/VerticalMario/assets/mario_small.png', 32, 32);
     this.game.load.spritesheet('goomba', 'public/VerticalMario/assets/goomba.png', 32, 32);
     this.game.load.spritesheet('spiny', 'public/VerticalMario/assets/spiny.gif', 32,32);
+    this.game.load.spritesheet('koopa', 'public/verticalMario/assets/koopa.gif', 32,45);
     this.game.load.image('coin', 'public/VerticalMario/assets/coin.png');
 
     this.game.load.image('brick', 'public/VerticalMario/assets/block.png', 32, 32);
@@ -20,11 +21,13 @@ VerticalMario.PreloadState = {
 
 
     //SOUNDS
+    this.game.load.audio('mainTheme', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/main-theme.mp3');
     this.game.load.audio('getCoin', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/smb_coin.wav');
   	this.game.load.audio('jump', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/smb_jump-small.wav');
-  	this.game.load.audio('dead', 'public/VerticalMario/assets/sounds/music_die.mp3');
-    this.game.load.audio('hitHead' , 'public/VerticalMario//assets/sounds/hit_head.mp3');
-    this.game.load.audio('squishEnemy', 'public/VerticalMario/assets/sounds/squish_enemy.mp3');
+  	this.game.load.audio('dead', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/music_die.mp3');
+    this.game.load.audio('hitHead' , 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/hit_head.mp3');
+    this.game.load.audio('squishEnemy', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/squish_enemy.mp3');
+    this.game.load.audio('shell_hit', 'public/VerticalMario/assets/sounds/smb_kick.mp3');
   },
 
   create: function(){

@@ -6,7 +6,7 @@ VerticalMario.InputScoreState = {
     //create score for game just played
     this.newScore = new Object();
     this.newScore.username = "YOU";
-    this.newScore.score = VerticalMario.globalScore ;
+    this.newScore.score = VerticalMario.GlobalsScore;
     console.log(`INPUT Stage: score: ${ this.newScore.score}`);
 
 
@@ -28,6 +28,10 @@ VerticalMario.InputScoreState = {
     this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Replay", 28);
     this.continueSign.anchor.setTo(0.5);
     this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    
+    if(mobileGame){
+      prompt();
+    }
 
   },
 

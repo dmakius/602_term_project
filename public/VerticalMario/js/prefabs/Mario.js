@@ -7,7 +7,7 @@ VerticalMario.Mario = function(game, x, y){
   this.game.physics.arcade.enable(this);
   this.score = 0;
   this.enableBody = true;
-  this.body.gravity.y = 175;
+  this.body.gravity.y = 700;
   this.facingRight = true;
   this.dead = false;
 
@@ -33,13 +33,13 @@ VerticalMario.Mario.prototype.update = function(){
   if(this.dead == false){
     if(this.cursors.up.isDown && this.body.wasTouching.down ||playerJump){
       this.jumpSound.play();
-      this.body.velocity.y = -220;
+      this.body.velocity.y = -440;
     }else if(this.cursors.left.isDown || movingLeft){
-      this.body.velocity.x = -120;
+      this.body.velocity.x = -150;
       this.facingRight = false;
       this.animations.play('walkingLeft');
     }else if(this.cursors.right.isDown || movingRight){
-      this.body.velocity.x = 120;
+      this.body.velocity.x = 150;
       this.facingRight = true;
       this.animations.play('walkingRight');
     }else if(this.facingRight){
@@ -61,7 +61,7 @@ VerticalMario.Mario.prototype.update = function(){
 
     if(this.body.y >= 500){
       this.deadSound.play();
-      VerticalMario.globalScore = this.score;
+      VerticalMario.GlobalsScore = this.score;
       this.game.state.start('InputScoreState');
     }
 

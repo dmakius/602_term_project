@@ -15,6 +15,7 @@
 
 	document.getElementById("shootBtn").addEventListener("touchstart", function(){
 		playerJump = true;
+		console.log("jump");
 	});
 	document.getElementById("shootBtn").addEventListener("touchend", function(){
 		playerJump = false;
