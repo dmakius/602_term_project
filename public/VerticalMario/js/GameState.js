@@ -21,7 +21,7 @@ VerticalMario.GameState = {
     this.createInitialPlatform();
     this.createGoombas();
     this.createCoins();
-    this.createKoopas();
+    // this.createKoopas();
     // this.createSpiny();
 
     this.score = 0;
@@ -30,7 +30,7 @@ VerticalMario.GameState = {
     this.rowTimer = this.game.time.events.loop(7000, this.addRow, this);
      // this.spinyTimer = this.game.time.events.loop(20000, this.addSpiny, this);
     this.goombaTimer = this.game.time.events.loop(5000, this.addGoomba, this);
-    this.koopaTimer = this.game.time.events.loop(10000, this.addKoopa, this);
+    // this.koopaTimer = this.game.time.events.loop(10000, this.addKoopa, this);
     ////////////////////////
 
     this.game.scoreBoard = this.game.add.bitmapText(10, 10, "marioFont", "SCORE: 0" , 16);
