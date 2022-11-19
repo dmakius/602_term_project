@@ -40,9 +40,9 @@ VerticalMario.GameState = {
    if(this.player.alive){
         this.game.physics.arcade.collide(this.player, this.initPlatforms, this.brickCollision, null, this);
         this.game.physics.arcade.collide(this.player, this.badGuys, this.playerCollision, null, this);
-        this.game.physics.arcade.collide(this.player, this.shellEnemies, this.playerCollision, null, this);
-        this.game.physics.arcade.collide(this.shellEnemies, this.badGuys, this.shellCollision, null, this);
-        this.game.physics.arcade.collide(this.shellEnemies, this.shellEnemies, this.shellCollision, null, this);
+        // this.game.physics.arcade.collide(this.player, this.shellEnemies, this.playerCollision, null, this);
+        // this.game.physics.arcade.collide(this.shellEnemies, this.badGuys, this.shellCollision, null, this);
+        // this.game.physics.arcade.collide(this.shellEnemies, this.shellEnemies, this.shellCollision, null, this);
         this.game.physics.arcade.overlap(this.coins, this.player, this.collectCoin, null, this);
       }
   this.game.physics.arcade.collide(this.shellEnemies, this.initPlatforms, this.realignBadGuy, null, this);
