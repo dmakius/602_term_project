@@ -30,7 +30,7 @@ VerticalMario.ScoreState = {
         
       }
 
-      if(mobile){
+      if(mobileGame){
         this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press Start to Continue", 28);
       }else{
         this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
@@ -41,7 +41,6 @@ VerticalMario.ScoreState = {
   
 
   update:function(){
-
     if(this.start.isDown || startGame){
       this.game.state.start('MenuState');
     }

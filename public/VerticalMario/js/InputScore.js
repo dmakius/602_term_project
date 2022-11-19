@@ -21,10 +21,11 @@ VerticalMario.InputScoreState = {
     this.username =  this.game.add.bitmapText(this.game.world.centerX-10, this.game.world.centerY, "gameFont", "" , 48);
     var username = this.username;
     this.game.input.keyboard.onPressCallback = function (letter, t, k) {
+      console.log(letter);
       username.setText(username.text += letter);
     };
 
-    if(mobile){
+    if(mobileGame){
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press Start to Continue", 28);
     }else{
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
@@ -32,6 +33,7 @@ VerticalMario.InputScoreState = {
     
     this.continueSign.anchor.setTo(0.5);
     this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    this.delete = this.game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE);
     
     if(mobileGame){
       prompt();
@@ -40,8 +42,12 @@ VerticalMario.InputScoreState = {
   },
 
   update:function(){
+    if(this.delete.isDown){
+      this.deleteLetter();
+    }
 
-    if(this.start.isDown || startGame){
+    if(this.username.text != "" && (this.start.isDown || startGame)){
+      console.log("Submitting Score");
         console.log(this.username.text);
         $.ajax({
             type: "POST",
@@ -58,6 +64,8 @@ VerticalMario.InputScoreState = {
     }
   },
 
- 
+  deleteLetter: function(){
+    this.username.text = "";
+  }
  
 }
