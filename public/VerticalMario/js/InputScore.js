@@ -24,8 +24,12 @@ VerticalMario.InputScoreState = {
       username.setText(username.text += letter);
     };
 
-
-    this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Replay", 28);
+    if(mobile){
+      this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press Start to Continue", 28);
+    }else{
+      this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
+    }
+    
     this.continueSign.anchor.setTo(0.5);
     this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     
