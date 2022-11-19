@@ -65,9 +65,9 @@ VerticalMario.GameState = {
 
 
   shellCollision:function(shellEnemy, badGuy){
-    console.log("Koopa colliding with goomba");
+   
     if(shellEnemy.animations.currentAnim.name == 'shell'){
-        console.log("SHELL colliding with goomba");
+       
         badGuy.hit = false;
         this.flipBadGuy(shellEnemy, badGuy);
         this.shellHitSound.play();
@@ -164,7 +164,7 @@ VerticalMario.GameState = {
     if(badGuy.body.touching.up && badGuy.key != 'spiny'){
         if(badGuy.key == 'koopa'){
             if(badGuy.flying){
-              console.log("hitting KOOPA");
+            
               this.squishEnemySound.play();
               badGuy.flying = false;
               badGuy.body.velocity.y = 120;
@@ -174,10 +174,10 @@ VerticalMario.GameState = {
               player.body.velocity.y = -125;
               badGuy.shell = true
                 if(player.body.velocity.x >= 0){
-                  console.log("hitting koopa to the right");
+                
                   badGuy.body.velocity.x = 300;
                 }else if (player.body.velocity.x <= 0){
-                  console.log("hitting koopa to the left");
+                 
                   badGuy.body.velocity.x = -300;
                 }
             }
@@ -245,7 +245,6 @@ VerticalMario.GameState = {
     badGuy.body.checkCollision.right = false;
     badGuy.body.checkCollision.down = false;
     badGuy.body.checkCollision.up = false;
-    console.log("goomba dead!");
     badGuy.kill();
   },
 

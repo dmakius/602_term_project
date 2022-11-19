@@ -2,13 +2,12 @@ var VerticalMario = VerticalMario || {};
 VerticalMario.InputScoreState = {
   create: function(){
     this.highScores = VerticalMario.GameState.highScores;
-    console.log(`INPUT Stage: score: ${VerticalMario.globalScore }`);
+
     //create score for game just played
     this.newScore = new Object();
     this.newScore.username = "YOU";
     this.newScore.score = VerticalMario.GlobalsScore;
-    console.log(`INPUT Stage: score: ${ this.newScore.score}`);
-
+   
 
     this.background = this.game.add.sprite(0,0, 'background');
      
@@ -21,7 +20,6 @@ VerticalMario.InputScoreState = {
     this.username =  this.game.add.bitmapText(this.game.world.centerX-10, this.game.world.centerY, "gameFont", "" , 48);
     var username = this.username;
     this.game.input.keyboard.onPressCallback = function (letter, t, k) {
-      console.log(letter);
       username.setText(username.text += letter);
     };
 
