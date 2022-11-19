@@ -11,7 +11,7 @@ VerticalMario.PreloadState = {
 
     this.game.load.spritesheet('mario', 'public/VerticalMario/assets/mario_small.png', 32, 32);
     this.game.load.spritesheet('goomba', 'public/VerticalMario/assets/goomba.png', 32, 32);
-    this.game.load.spritesheet('koopa', 'public/verticalMario/assets/koopa.gif', 32,45);
+    this.game.load.spritesheet('koopa', 'public/verticalMario/assets/koopa.gif', 32,45, 33);
     this.game.load.image('coin', 'public/VerticalMario/assets/coin.png');
 
     this.game.load.image('brick', 'public/VerticalMario/assets/block.png', 32, 32);
