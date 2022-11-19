@@ -4,6 +4,7 @@ import router from './router.js';
 import CookieParser from 'cookie-parser'
 import flash from 'connect-flash';
 import session from 'express-session';
+import cors from "cors";
 
 var app =  express();
 
@@ -21,9 +22,10 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(CookieParser());
-app.use("/", router);
+app.use(cors());
+app.use("/", cors(), router);
 
-app.use("*", (req, res) => res.status(404).json({error:"page not found"}));
+app.use("*",(req, res) => res.status(404).json({error:"page not found"}));
 
 
 
