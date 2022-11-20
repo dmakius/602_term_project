@@ -1,7 +1,13 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.InputScoreState = {
-  create: function(){
-    this.highScores = VerticalMario.GameState.highScores;
+
+  create: function(){   
+    if(mobileGame){
+      $('.modal').css("display","block");
+      $('#modal-score').text(VerticalMario.GlobalsScore);
+    }
+
+    this.getScores();
 
     //create score for game just played
     this.newScore = new Object();;
@@ -35,17 +41,18 @@ VerticalMario.InputScoreState = {
   },
 
   update:function(){
-    if(mobileGame){
-      $("#mobile-promp").focus();
-    }
 
     if(this.delete.isDown){
       this.deleteLetter();
     }
 
     if(this.username.text != "" && (this.start.isDown || startGame)){
-      console.log("Submitting Score");
         console.log(this.username.text);
+        VerticalMario.GameState.highScores.push({
+          _id:"blank",
+          name: this.username.text,
+          score: this.newScore.score});
+
         $.ajax({
             type: "POST",
             url: '/Score/Create',
@@ -63,6 +70,17 @@ VerticalMario.InputScoreState = {
 
   deleteLetter: function(){
     this.username.text = "";
-  }
+  },
+
+  getScores: function(){
+    $.ajax({
+      type: "GET",
+      url: '/Score',
+      async: false,
+      success: function(response){
+        VerticalMario.GameState.highScores = response;
+      }
+      });
+  },
  
 }

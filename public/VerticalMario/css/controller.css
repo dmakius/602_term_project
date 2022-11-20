@@ -1,3 +1,13 @@
+/* 
+a. Must use at least 10 descendent selectors.
+b. Must use at least 10 unique adjacent selectors.
+c. Must have 2+ different class selectors.
+d. Must have some ID selectors.
+e. Must have 5 or more pseudo element selectors.
+f. Must have 5 or more pseudo class selectors
+ */
+
+
 #shootBtn{
 	display:block;
 	margin:auto;
@@ -35,6 +45,7 @@
     content:"\25cb";
     font-size: 2em;
 }
+
 .roundButton{
       height: 100px;
       width: 100px;

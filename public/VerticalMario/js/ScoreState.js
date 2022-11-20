@@ -1,14 +1,7 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.ScoreState = {
   preload: function(){
-    $.ajax({
-      type: "GET",
-      url: '/Score',
-      async: false,
-      success: function(response){
-          VerticalMario.GameState.highScores = response;
-      }
-      });
+    this.sortScores();
   },
   
   create: function(){
@@ -42,5 +35,20 @@ VerticalMario.ScoreState = {
     if(this.start.isDown || startGame){
       this.game.state.start('MenuState');
     }
+  },
+
+  sortScores: function(){
+    console.log("SORINTG SCORES");
+    var scores = VerticalMario.GameState.highScores;
+    for(var x = 0; x < VerticalMario.GameState.highScores.length; x++){
+      for(var y= 0; y < VerticalMario.GameState.highScores.length; y++){
+        if(scores[x].score > scores[y].score){
+          var temp = scores[x];
+          scores[x] = scores[y];
+          scores[y] = temp;
+        } 
+      }
+    }
+    VerticalMario.GameState.highScores = scores;
   }
 }

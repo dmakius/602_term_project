@@ -31,7 +31,7 @@ VerticalMario.Mario.prototype.constructor = VerticalMario.Mario;
 
 VerticalMario.Mario.prototype.update = function(){
   if(this.dead == false){
-    if(this.cursors.up.isDown && this.body.wasTouching.down ||playerJump){
+    if((this.cursors.up.isDown && this.body.wasTouching.down) ||playerJump && this.body.wasTouching.down){
       this.jumpSound.play();
       this.body.velocity.y = -440;
     }else if(this.cursors.left.isDown || movingLeft){
