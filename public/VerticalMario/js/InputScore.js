@@ -86,7 +86,7 @@ VerticalMario.InputScoreState = {
           } 
       });
       this.game.state.start('ScoreState');
-  }
+   }
   }
     },
 

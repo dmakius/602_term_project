@@ -32,9 +32,16 @@ VerticalMario.ScoreState = {
   
 
   update:function(){
-    if(this.start.isDown || startGame){
-      this.game.state.start('MenuState');
+    if(mobileGame){
+      if(this.start.isDown){
+        this.game.state.start('MenuState');
+      }
+    }else{
+      if(startGame){
+        this.game.state.start('MenuState');
+      }
     }
+   
   },
 
   sortScores: function(){
