@@ -1,6 +1,5 @@
 
 	document.getElementById("rightBtn").addEventListener("touchstart", function(){
-
 		movingRight = true;
 	});
 	document.getElementById("rightBtn").addEventListener("touchend", function(){

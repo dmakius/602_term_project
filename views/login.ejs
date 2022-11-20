@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <%- include('./partials/head'); %>
+    <title>Login</title>
+    <% if(mobile){ %>
+      <meta name="viewport" content="user-scalable=no,target-densitydpi=device-dpi" />
+    <% } %>
   </head>
   <body>
+
+
     <%- include('./partials/header'); %>
     <div class="container">
       <div id="flashAlert"></div>

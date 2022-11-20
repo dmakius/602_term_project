@@ -5,7 +5,6 @@
 
   <% if(mobile){ %>
     <meta name="viewport" content="user-scalable=no,target-densitydpi=device-dpi" />
-    <!-- <meta name="viewport" content="maximum-scale=1.0, user-scalable=0"> -->
   <% } %>
   <script
   src="https://code.jquery.com/jquery-3.6.1.js"
@@ -35,8 +34,7 @@
     <div class="row">
       <br>
       <div id="verticalMario" style="margin-top:20px;">
-        <textarea id="mobile-promp">
-        </textarea>
+        <input id="mobile-promp" type="text" name="mobile-promp">
       </div>
       <script>
         var VerticalMario = VerticalMario || {};

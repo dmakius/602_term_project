@@ -17,6 +17,7 @@ html, body {
     border-radius: 100px;
     height:175px;
     width:175px;
+    border: 2px solid #000;
 }
 #shootBtn span{
     font-size: 75px;

@@ -2,7 +2,9 @@
 <head>
     
 <title>Admin</title>
-   
+<% if(mobile){ %>
+    <meta name="viewport" content="user-scalable=no,target-densitydpi=device-dpi" />
+  <% } %>
 <%- include('./partials/head'); %>
 </head>
 <body>
