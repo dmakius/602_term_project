@@ -5,9 +5,34 @@ html{
     user-select: none; }/* Standard syntax */
 html, body {
       overscroll-behavior-y: none;
-}
-
-html, body {
       position: fixed;
       overflow: hidden;
+}
+
+#shootBtn{
+	display:block;
+	margin:auto;
+}
+.glyphicon.glyphicon-one-fine-full-dot {
+    margin-bottom: -.8em;
+    overflow: hidden;
+}
+.glyphicon.glyphicon-one-fine-full-dot:before {
+    content:"\25cf";
+    font-size: 3em;
+}
+.glyphicon.glyphicon-one-fine-empty-dot {
+    margin-bottom: -.8em;
+    overflow: hidden;
+    margin-top: -25px;
+}
+.glyphicon.glyphicon-one-fine-empty-dot:before {
+    content:"\25cb";
+    font-size: 2em;
+}
+.roundButton{
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      border: 2px solid #000;
 }

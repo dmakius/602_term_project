@@ -4,8 +4,7 @@ VerticalMario.InputScoreState = {
     this.highScores = VerticalMario.GameState.highScores;
 
     //create score for game just played
-    this.newScore = new Object();
-    this.newScore.username = "YOU";
+    this.newScore = new Object();;
     this.newScore.score = VerticalMario.GlobalsScore;
    
 
@@ -25,7 +24,7 @@ VerticalMario.InputScoreState = {
 
     if(mobileGame){
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press Start to Continue", 28);
-      $("#mobile-promp").focus();
+     
     }else{
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
     }
@@ -36,6 +35,10 @@ VerticalMario.InputScoreState = {
   },
 
   update:function(){
+    if(mobileGame){
+      $("#mobile-promp").focus();
+    }
+
     if(this.delete.isDown){
       this.deleteLetter();
     }

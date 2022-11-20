@@ -2,9 +2,10 @@
 <head>
   <%- include('./partials/head'); %>
   <title>Vertical Mario</title>
-  
+
   <% if(mobile){ %>
-    <meta name="viewport" content="maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="user-scalable=no,target-densitydpi=device-dpi" />
+    <!-- <meta name="viewport" content="maximum-scale=1.0, user-scalable=0"> -->
   <% } %>
   <script
   src="https://code.jquery.com/jquery-3.6.1.js"
@@ -38,7 +39,6 @@
         </textarea>
       </div>
       <script>
-       
         var VerticalMario = VerticalMario || {};
         VerticalMario.game = new Phaser.Game(700, 500, Phaser.AUTO,'verticalMario');
         VerticalMario.game.state.add('BootState', VerticalMario.BootState);
@@ -58,9 +58,7 @@
       <%- include('./partials/controller'); %>
       <script src ='./public/VerticalMario/js/VerticalMarioController.js'></script>
       <link rel="stylesheet" href="public/VerticalMario/css/mobile-styles.css">
-      <script>
-        mobileGame = true;
-      </script>
+      <script> mobileGame = true; </script>
    <% } %>
 
   </div>
