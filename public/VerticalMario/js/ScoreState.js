@@ -1,7 +1,6 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.ScoreState = {
   preload: function(){
-    console.log("geting scores from API ->");
     $.ajax({
       type: "GET",
       url: '/Score',
@@ -14,7 +13,6 @@ VerticalMario.ScoreState = {
   
   create: function(){
     this.highScores = VerticalMario.GameState.highScores;
-    console.log("DATA FROM API");
     console.log(this.highScores);
 
     this.background = this.game.add.sprite(0,0, 'background');

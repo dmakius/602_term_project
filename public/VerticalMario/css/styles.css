@@ -1,0 +1,10 @@
+canvas {
+    display : block;   
+    margin : auto;
+}
+
+#mobile-promp{
+    display : block;   
+    margin : auto;
+    display:none;
+}

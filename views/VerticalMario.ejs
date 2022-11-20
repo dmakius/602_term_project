@@ -2,10 +2,10 @@
 <head>
   <%- include('./partials/head'); %>
   <title>Vertical Mario</title>
-  <!-- <meta name = "viewport" 
-  content = "user-scalable = no"> -->
-  <meta name="viewport" content="maximum-scale=1.0, user-scalable=0">
- 
+  
+  <% if(mobile){ %>
+    <meta name="viewport" content="maximum-scale=1.0, user-scalable=0">
+  <% } %>
   <script
   src="https://code.jquery.com/jquery-3.6.1.js"
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -25,14 +25,7 @@
   <script src = "public/VerticalMario/js/prefabs/Spiny.js"></script>
   <script src = "public/VerticalMario/js/prefabs/Koopa.js"></script>
   
-  <style>
-    canvas {
-      display : block;   
-      margin : auto;
-    
-    }
-
-  </style>
+  <link rel="stylesheet" href="public/VerticalMario/css/styles.css">
 </head>
 <body style="width:100%">
   <%- include('./partials/header'); %>
@@ -40,7 +33,10 @@
   <div class="container">
     <div class="row">
       <br>
-      <div id="verticalMario" style="margin-top:20px;"></div>
+      <div id="verticalMario" style="margin-top:20px;">
+        <textarea id="mobile-promp">
+        </textarea>
+      </div>
       <script>
        
         var VerticalMario = VerticalMario || {};
@@ -60,26 +56,13 @@
 
     <% if(mobile){ %>
       <%- include('./partials/controller'); %>
+      <script src ='./public/VerticalMario/js/VerticalMarioController.js'></script>
+      <link rel="stylesheet" href="public/VerticalMario/css/mobile-styles.css">
       <script>
         mobileGame = true;
       </script>
-      <style>
-        html{-webkit-user-select: none; /* Safari 3.1+ */
-        -moz-user-select: none; /* Firefox 2+ */
-        -ms-user-select: none; /* IE 10+ */
-        user-select: none; }/* Standard syntax */
-        html, body {
-          overscroll-behavior-y: none;
-        }
-
-        html, body {
-          position: fixed;
-          overflow: hidden;
-        }
-      </style>
    <% } %>
 
   </div>
-  <script src = "public/VerticalMario/js/VerticalMarioController.js"></script>
 </body>
 </html>

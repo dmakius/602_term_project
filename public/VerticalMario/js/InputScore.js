@@ -25,6 +25,7 @@ VerticalMario.InputScoreState = {
 
     if(mobileGame){
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press Start to Continue", 28);
+      $("#mobile-promp").focus();
     }else{
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
     }
@@ -32,11 +33,6 @@ VerticalMario.InputScoreState = {
     this.continueSign.anchor.setTo(0.5);
     this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     this.delete = this.game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE);
-    
-    if(mobileGame){
-      prompt();
-    }
-
   },
 
   update:function(){
