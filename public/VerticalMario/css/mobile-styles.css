@@ -5,54 +5,7 @@ html{
     user-select: none; }/* Standard syntax */
 html, body {
       overscroll-behavior-y: none;
-      position: fixed;
+      /* position: fixed; */
       overflow: hidden;
 }
 
-#shootBtn{
-	display:block;
-	margin:auto;
-    float:right; 
-    margin-top:20px;
-    border-radius: 100px;
-    height:175px;
-    width:175px;
-    border: 2px solid #000;
-}
-#shootBtn span{
-    font-size: 75px;
-    font-weight: bold;
-}
-#startBtn{
-    display:block; 
-    margin:auto;
-    height: 100px;
-    font-size: 45px;
-}
-.glyphicon.glyphicon-one-fine-full-dot {
-    margin-bottom: -.8em;
-    overflow: hidden;
-}
-.glyphicon.glyphicon-one-fine-full-dot:before {
-    content:"\25cf";
-    font-size: 3em;
-}
-.glyphicon.glyphicon-one-fine-empty-dot {
-    margin-bottom: -.8em;
-    overflow: hidden;
-    margin-top: -25px;
-}
-.glyphicon.glyphicon-one-fine-empty-dot:before {
-    content:"\25cb";
-    font-size: 2em;
-}
-.roundButton{
-      height: 100px;
-      width: 100px;
-      border-radius: 50px;
-      border: 2px solid #000;
-}
-.roundButton span{
-    font-size: 50px;
-    font-weight: bold;
-}
