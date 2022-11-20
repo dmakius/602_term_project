@@ -1,6 +1,8 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.ScoreState = {
   preload: function(){
+    console.log("SCIRE STATE LOADED");
+    startGame = false;
     this.sortScores();
   },
   
@@ -33,11 +35,11 @@ VerticalMario.ScoreState = {
 
   update:function(){
     if(mobileGame){
-      if(this.start.isDown){
+      if(startGame){
         this.game.state.start('MenuState');
       }
     }else{
-      if(startGame){
+      if(this.start.isDown){
         this.game.state.start('MenuState');
       }
     }
