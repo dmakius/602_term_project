@@ -14,8 +14,10 @@
 </div>
 
 <script>
+
   function modalSend(){
     var value = $("#modal-username").val();
+    $("#modal-username").val("");
     VerticalMario.InputScoreState.username.setText(value);
     $('.modal').css("display", "none");
   }

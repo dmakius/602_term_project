@@ -33,20 +33,20 @@ VerticalMario.InputScoreState = {
      
     }else{
       this.continueSign = this.game.add.bitmapText(this.game.world.centerX, 400, "gameFont", "Press SPACEBAR to Continue", 28);
+      this.delete = this.game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE);
+      this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     }
     
     this.continueSign.anchor.setTo(0.5);
-    this.start = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    this.delete = this.game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE);
+
   },
 
   update:function(){
-
-    if(this.delete.isDown){
-      this.deleteLetter();
-    }
-
-    if(this.username.text != "" && (this.start.isDown || startGame)){
+    if(mobileGame == false){
+      if(this.delete.isDown){
+        this.deleteLetter();
+      }
+      if(this.username.text != "" && this.start.isDown ){
         console.log(this.username.text);
         VerticalMario.GameState.highScores.push({
           _id:"blank",
@@ -66,7 +66,29 @@ VerticalMario.InputScoreState = {
         });
         this.game.state.start('ScoreState');
     }
-  },
+  }else{
+    if(this.username.text != "" && startGame ){
+      console.log(this.username.text);
+      VerticalMario.GameState.highScores.push({
+        _id:"blank",
+        name: this.username.text,
+        score: this.newScore.score});
+
+      $.ajax({
+          type: "POST",
+          url: '/Score/Create',
+          data:{
+            name: this.username.text,
+            score: this.newScore.score
+          },
+          success: function(response){
+              console.log(response);
+          } 
+      });
+      this.game.state.start('ScoreState');
+  }
+  }
+    },
 
   deleteLetter: function(){
     this.username.text = "";
