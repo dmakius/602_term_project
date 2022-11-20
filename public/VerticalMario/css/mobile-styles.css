@@ -12,7 +12,17 @@ html, body {
 #shootBtn{
 	display:block;
 	margin:auto;
+    float:right; 
+    margin-top:20px;
+    border-radius: 100px;
+    height:200px;
+    width:200px;
 }
+#shootBtn span{
+    font-size: 75px;
+    font-weight: bold;
+}
+
 .glyphicon.glyphicon-one-fine-full-dot {
     margin-bottom: -.8em;
     overflow: hidden;
@@ -31,8 +41,12 @@ html, body {
     font-size: 2em;
 }
 .roundButton{
-      height: 50px;
-      width: 50px;
+      height: 100px;
+      width: 100px;
       border-radius: 50px;
       border: 2px solid #000;
+}
+.roundButton span{
+    font-size: 50px;
+    font-weight: bold;
 }
