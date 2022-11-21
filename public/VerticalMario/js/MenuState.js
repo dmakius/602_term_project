@@ -8,9 +8,12 @@ VerticalMario.MenuState = {
     this.background = this.game.add.sprite(0,0, 'background');
     this.game.logo = this.game.add.image(this.game.world.centerX, this.game.world.centerY, 'main_title');
     this.game.logo.anchor.setTo(0.5);
-    this.game.title = this.game.add.bitmapText(this.game.world.centerX, 375, "gameFont", "press spacebar to start" , 36);
+    if(mobileGame){
+      this.game.title = this.game.add.bitmapText(this.game.world.centerX, 375, "gameFont", "press Start to start" , 36);
+    }else{
+      this.game.title = this.game.add.bitmapText(this.game.world.centerX, 375, "gameFont", "press spacebar to start" , 36);
+    }
     this.game.title.anchor.setTo(0.5);
-
     this.game.topTitle = this.game.add.bitmapText(this.game.world.centerX -  150, 130, "gameFont", "Vertical" , 48);
     this.game.topTitle.anchor.setTo(0.5);
     this.game.topTitle.angle = -15;

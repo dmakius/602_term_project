@@ -156,6 +156,7 @@ VerticalMario.GameState = {
     coin.relocate();
     this.coinSound.play();
     this.score += 200;
+    player.score += 200;
     this.game.scoreBoard.setText("SCORE: " +  this.score );
   },
 
@@ -192,6 +193,7 @@ VerticalMario.GameState = {
             this.game.time.events.add(Phaser.Timer.SECOND * 0.5, this.killSprite, this, badGuy);
             player.body.velocity.y = -200;
             this.score += 200;
+            player.score += 200;
             this.game.scoreBoard.setText("SCORE: " +  this.score);
           }
         }
