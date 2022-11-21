@@ -37,4 +37,15 @@
 	</div>	
 </div>
 
-<script src = 'public/js/controller.js'></script>
+<script type="module">
+	import Controller from "../../public/js/controller.js"
+	Controller.preventLongPressMenu(document.getElementsByTagName('upBtn'));
+	Controller.preventLongPressMenu(document.getElementsByTagName('leftBtn'));
+	Controller.preventLongPressMenu(document.getElementsByTagName('rightBtn'));
+	Controller.preventLongPressMenu(document.getElementsByTagName('downBtn'));
+	Controller.preventLongPressMenu(document.getElementsByTagName('shootBtn'));
+	Controller.rightButtonOn();
+	Controller.leftButtonOn();
+	Controller.shootBottonOn();
+	Controller.startBottonOn();
+</script>

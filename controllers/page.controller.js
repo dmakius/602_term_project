@@ -1,5 +1,6 @@
 import loggedIn from "../middleware/loggedIn.js";
 import ExpressUserAgent from "express-useragent";
+import HighScore from './../models/HighScore.js';
 
 export default class PageController{
     static async getGamePage(req, res){
@@ -14,7 +15,7 @@ export default class PageController{
         var ua = ExpressUserAgent.parse(source);
         var mobile = ua.isMobile
         var x = loggedIn(req, res);
-        res.render('login', {loggedIn: x, mobile});
+        res.render('login', {loggedIn: x, arr:mobile});
     }
 
     static async getAdminPage(req, res ){
@@ -22,7 +23,13 @@ export default class PageController{
         var ua = ExpressUserAgent.parse(source);
         var mobile = ua.isMobile
         var x = loggedIn(req, res);
-        res.render('admin',{loggedIn: x, mobile});
+      
+        HighScore.find({}).then((scores) => {
+            console.log(scores.length); 
+            res.render('admin',{loggedIn: x, mobile, scores});
+        })
+
+        
     }
     static async getRegistrationPage(req, res){
         var source = req.headers['user-agent'];

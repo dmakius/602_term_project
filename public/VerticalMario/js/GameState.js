@@ -191,7 +191,7 @@ VerticalMario.GameState = {
             this.pointsUp = this.game.add.image(badGuy.body.x, badGuy.body.y - 10, '200pts');
             this.game.time.events.add(Phaser.Timer.SECOND * 0.5, this.killPointSprite, this, this.pointsUp);
             this.game.time.events.add(Phaser.Timer.SECOND * 0.5, this.killSprite, this, badGuy);
-            player.body.velocity.y = -200;
+            player.body.velocity.y = -300;
             this.score += 200;
             player.score += 200;
             this.game.scoreBoard.setText("SCORE: " +  this.score);
@@ -205,7 +205,7 @@ VerticalMario.GameState = {
         player.dead = true;
         player.animations.play('dead');
         player.body.velocity.x = 0;
-        player.body.velocity.y = -50;
+        player.body.velocity.y = -350;
         this.player.alive = false;
       }  
   },
@@ -232,6 +232,7 @@ VerticalMario.GameState = {
       badGuy.body.checkCollision.right = false;
       badGuy.body.checkCollision.down = false;
       badGuy.body.checkCollision.up = false;
+      badGuy.animations.play('flipped');
       if(brick.key == "koopa"){
         brick.body.velocity.x *= 2;
       }
@@ -242,7 +243,6 @@ VerticalMario.GameState = {
   },
 
   killSprite: function(badGuy){
-    console.log(badGuy);
     badGuy.body.checkCollision.left = false;
     badGuy.body.checkCollision.right = false;
     badGuy.body.checkCollision.down = false;

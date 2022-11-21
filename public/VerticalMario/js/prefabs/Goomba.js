@@ -7,9 +7,10 @@ VerticalMario.Goomba = function(game, x, y){
   this.body.gravity.y  = 400;
   this.anchor.setTo(0.5);
   this.dead = false;
-  this.animations.add();
+  this.animations.add(); 
   this.animations.add('walking', [0,1], 10, true);
   this.animations.add('dead', [2], 10, true);
+  this.animations.add('flipped', [3], 10, true);
   this.animations.play('walking');
 }
 

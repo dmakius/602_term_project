@@ -17,8 +17,42 @@
             <br>
             <hr>
            
-            <div id="myList"></div>
+            <div id="myList">
+                <% scores.forEach(score => {%>
+                    <div id ="div_<%- score._id %>">
+                    <div class="row">
+                        <div class="col">
+                            <label for="username"><b>NAME:</b></label>
+                            <input type='text' name="username" id="<%- score._id %>" value="<%- score.name %>">
+
+                            <label for="score"><b>SCORE:</b></label>
+                            <input type='text' name="score" id="<%- score._id %>" value="<%- score.score %>">  
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col">
+                            <button id="<%- score._id %>" type="button" class='edit btn btn-info'>EDIT</button>
+                            <button id="<%- score._id %>" type="button" class='delete btn btn-danger'>DELETE</button>
+                        </div>    
+                    </div>
+                    <hr>
+                </div>
+                <% })%>                           
+                
+            </div>
         </div>
     </div>
-   <script src ='/public/js/admin.js'></script>
+   <script type="module">
+        import Admin from  "../public/js/Admin.js";
+      
+        $(".edit.btn.btn-info").on("click", function (index, element) {
+                Admin.updateID(index.currentTarget.id);
+        });
+        $(".delete.btn.btn-danger").on("click", function (index, element) {
+                Admin.deleteID(index.currentTarget.id);
+        });
+        
+       
+       
+   </script>
 </body>

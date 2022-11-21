@@ -1,7 +1,6 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.ScoreState = {
   preload: function(){
-    console.log("SCIRE STATE LOADED");
     startGame = false;
     this.sortScores();
   },
@@ -47,7 +46,6 @@ VerticalMario.ScoreState = {
   },
 
   sortScores: function(){
-    console.log("SORINTG SCORES");
     var scores = VerticalMario.GameState.highScores;
     for(var x = 0; x < VerticalMario.GameState.highScores.length; x++){
       for(var y= 0; y < VerticalMario.GameState.highScores.length; y++){

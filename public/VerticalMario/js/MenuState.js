@@ -1,9 +1,5 @@
 var VerticalMario = VerticalMario || {};
 VerticalMario.MenuState = {
-  preload: function(){
-    console.log("menu state: Preload");
-  },
-
   create: function(){
     this.background = this.game.add.sprite(0,0, 'background');
     this.game.logo = this.game.add.image(this.game.world.centerX, this.game.world.centerY, 'main_title');
