@@ -15,7 +15,7 @@ export default class PageController{
         var ua = ExpressUserAgent.parse(source);
         var mobile = ua.isMobile
         var x = loggedIn(req, res);
-        res.render('login', {loggedIn: x, arr:mobile});
+        res.render('login', {loggedIn: x, mobile});
     }
 
     static async getAdminPage(req, res ){
