@@ -18,15 +18,15 @@
             <hr>
            
             <div id="myList">
-                <% scores.forEach(score => {%>
+                <% sortedScores.forEach(score => {%>
                     <div id ="div_<%- score._id %>">
                     <div class="row">
                         <div class="col">
                             <label for="username"><b>NAME:</b></label>
-                            <input type='text' name="username" id="<%- score._id %>" value="<%- score.name %>">
-
+                            <input type='text' name="username" id="username_<%- score._id %>" value="<%- score.name %>">
+                            <br><br>
                             <label for="score"><b>SCORE:</b></label>
-                            <input type='text' name="score" id="<%- score._id %>" value="<%- score.score %>">  
+                            <input type='text' name="score" id="score_<%- score._id %>" value="<%- score.score %>">  
                         </div>
                         <div class="col"></div>
                         <div class="col"></div>

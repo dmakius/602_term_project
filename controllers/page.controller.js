@@ -1,6 +1,7 @@
 import loggedIn from "../middleware/loggedIn.js";
 import ExpressUserAgent from "express-useragent";
 import HighScore from './../models/HighScore.js';
+import Sort from './../helpers/sort.js';
 
 export default class PageController{
     static async getGamePage(req, res){
@@ -23,10 +24,11 @@ export default class PageController{
         var ua = ExpressUserAgent.parse(source);
         var mobile = ua.isMobile
         var x = loggedIn(req, res);
-      
+        console.log("getting scores");
         HighScore.find({}).then((scores) => {
-            console.log(scores.length); 
-            res.render('admin',{loggedIn: x, mobile, scores});
+            console.log(scores); 
+            var sortedScores =  Sort(scores);
+            res.render('admin',{loggedIn: x, mobile, sortedScores});
         })
 
         

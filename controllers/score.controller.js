@@ -3,9 +3,14 @@ import mongoose from 'mongoose';
 
 export default class ScoreController{
     static async getScores(req, res){
-        var results = null;
+        console.log("getting scores");
         HighScore.find({})
-        .then((data) => { res.send(data)})
+        .then((data) => { 
+            var d =  Sort(data);  
+            console.log(d);  
+            res.send(d)
+        })
+        .catch(error =>res.status(400).json({ message: "Failed to get Scores", error: error.message}));
     }
 
     static async createScore(req, res){
