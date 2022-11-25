@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import router from './router.js';
 import CookieParser from 'cookie-parser'
 import flash from 'connect-flash';
+import ExpressUserAgent from "express-useragent";
 import session from 'express-session';
 import cors from "cors";
 
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(CookieParser());
 app.use(cors());
+app.use(ExpressUserAgent.express());
 app.use("/", cors(), router);
 
 app.use("*",(req, res) => res.status(404).json({error:"page not found"}));
