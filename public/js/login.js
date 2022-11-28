@@ -1,5 +1,5 @@
 export default class Login{
-  static login(){
+  static login(){ 
     const form = document.querySelector('form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault()

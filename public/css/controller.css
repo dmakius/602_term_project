@@ -16,7 +16,7 @@ f. Must have 5 or more pseudo class selectors
     border-radius: 100px;
     height:175px;
     width:175px;
-    border: 2px solid #000;
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
 }
 #shootBtn span{
     font-size: 75px;
@@ -32,7 +32,7 @@ f. Must have 5 or more pseudo class selectors
     margin-bottom: -.8em;
     overflow: hidden;
 }
-.glyphicon.glyphicon-one-fine-full-dot:before {
+.glyphicon.glyphicon-one-fine-full-dot::before {
     content:"\25cf";
     font-size: 3em;
 }
@@ -41,18 +41,48 @@ f. Must have 5 or more pseudo class selectors
     overflow: hidden;
     margin-top: -25px;
 }
-.glyphicon.glyphicon-one-fine-empty-dot:before {
-    content:"\25cb";
-    font-size: 2em;
-}
 
+#controller{
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
+   /* // background-color: #ccc; */
+    margin-top:25px;
+    padding:15px;
+    border-radius: 15%;
+}
 .roundButton{
       height: 100px;
       width: 100px;
       border-radius: 50px;
-      border: 2px solid #000;
+      box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
 }
+
+button span{
+    font-family: monospace;
+    font-size:72px ;
+}
+
+.roundButton:hover {
+    background-color:#aaa;
+}
+.roundButton span:hover {
+    opacity: 0.5;
+}
+
+#shootBtn:hover {
+    background-color:#aaa;
+}
+#shootBtn span:hover {
+    opacity: 0.5;
+}
+
 .roundButton span{
     font-size: 50px;
     font-weight: bold;
+}
+
+#startButton{
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+#startBtn:hover{
+    border:1px solid black;
 }

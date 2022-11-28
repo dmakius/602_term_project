@@ -1,5 +1,5 @@
 export default class Register {
-  register(){
+  static register(){
     const form = document.querySelector('form')     
     form.addEventListener('submit', async (e) => {
       console.log("submitting form");
@@ -9,7 +9,7 @@ export default class Register {
       this.sendRequest();
   });
 }
-  sendRequest(){
+ static sendRequest(){
     $.ajax({
       type: "POST",
       url: '/user/create',

@@ -1,0 +1,130 @@
+hr{
+    margin:0px;
+}
+canvas {
+    display : block;   
+    margin : auto;
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    position: sticky;
+    top: 0px;
+}
+
+.flashes{
+    position: sticky;
+}
+
+#mobile-promp{
+    display : block;   
+    margin : auto;
+    display:none;
+}
+
+:root {
+    touch-action: pan-x pan-y;
+    height: 100% 
+  }
+
+  /* Must use at least 10 descendent selectors */
+#myList div div {
+    padding:10px;
+    border-radius:15px;
+}
+
+#myList div div:hover {
+    background-color: #ccc;
+    padding:10px;
+}
+
+
+#myList div div button:hover {
+   border:solid 1px black;
+}
+
+#myList div div input:hover {
+   background-color: rgb(191, 234, 252);
+}
+
+
+ 
+  /* Must use at least 10 unique adjacent selectors */
+
+
+/* Must have some ID selectors */
+/* Must have 2+ different class selectors. */
+
+
+/* 5 or more pseudo element selectors. */
+
+.glyphicon.glyphicon-one-fine-empty-dot::before {
+    content:"\25cb";
+    font-size: 2em;
+}
+.glyphicon.glyphicon-one-fine-full-dot::before {
+    content:"\25cf";
+    font-size: 3em;
+}
+.navbar-brand::first-letter{
+    text-transform: uppercase;
+    font-weight: 1000;
+}
+
+.delete::after{
+    content:"X";
+    margin-left: 15px;
+}
+.edit::after{
+    content: "O";
+    margin-left: 15px;
+}
+
+/* 5 or more pseudo class selectors */
+
+.nav-item a:hover{
+    background-color: #e5e5e5;
+    
+}
+
+.navbar-brand:hover{
+    color: #e5e5e5;
+    
+}
+
+input:hover {
+    /* border: 1px solid rgb(63, 63, 112); */
+}
+
+
+input[type=submit]:hover {
+    color: black
+}
+
+.col:last-child button{
+    float: right;
+    margin-left: 10px;
+   
+}
+
+.flash{
+    height:100px;
+    margin-top:10px;
+}
+
+.flash-edit{
+    height:100px;
+    font-size: 45px;
+}
+.flash-edit::before{
+    content: '✏️';
+}
+
+.flash-delete{
+    height:100px;
+    font-size: 45px;
+}
+
+.flash-delete::before{
+    content:'❌';
+}

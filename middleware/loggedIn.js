@@ -2,8 +2,6 @@ import jwt from "jsonwebtoken";
 const jwtSecret = 'c779d5151c977254056d21937d52d7caacc224b6c063f798f80abc2a8e5e92fa99c194';
 
 function verifyToken(req , res, next){ 
-    console.log("verifying token");
-    console.log(req.cookies);
     const token = req.cookies.jwt
         
     if(token){
@@ -21,12 +19,7 @@ function verifyToken(req , res, next){
     }else{
             res.locals.user = null;
             return false;
-        }
-
-
-    
+        }   
 }
-
-
 
 export default verifyToken;

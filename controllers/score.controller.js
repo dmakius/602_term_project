@@ -1,14 +1,13 @@
 import HighScore from './../models/HighScore.js';
+import Sort from "../helpers/sort.js"
 import mongoose from 'mongoose';
 
 export default class ScoreController{
     static async getScores(req, res){
-        console.log("getting scores");
         HighScore.find({})
         .then((data) => { 
-            var d =  Sort(data);  
-            console.log(d);  
-            res.send(d)
+            var sortedData = Sort(data);  
+            res.send(sortedData)
         })
         .catch(error =>res.status(400).json({ message: "Failed to get Scores", error: error.message}));
     }

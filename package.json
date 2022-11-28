@@ -24,6 +24,7 @@
     "express-useragent": "^1.0.15",
     "heroku": "^7.66.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.7"
+    "mongoose": "^5.5.7",
+    "morgan": "^1.10.0"
   }
 }

@@ -4,7 +4,9 @@ import userController from "./controllers/user.controller.js";
 import pageController from "./controllers/page.controller.js";
 import auth from "./middleware/auth.js";
 
+
 const router = express.Router();
+
 //Pages
 router.get('/',pageController.getGamePage);
 router.get('/admin', auth, pageController.getAdminPage);

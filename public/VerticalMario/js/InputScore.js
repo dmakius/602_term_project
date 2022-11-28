@@ -47,48 +47,40 @@ VerticalMario.InputScoreState = {
         this.deleteLetter();
       }
       if(this.username.text != "" && this.start.isDown ){
-        console.log(this.username.text);
-        VerticalMario.GameState.highScores.push({
-          _id:"blank",
-          name: this.username.text,
-          score: this.newScore.score});
-
-        $.ajax({
-            type: "POST",
-            url: '/Score/Create',
-            data:{
-              name: this.username.text,
-              score: this.newScore.score
-            },
-            success: function(response){
-                console.log(response);
-            } 
-        });
+        console.log("Add score function starting");
+        this.addScore(this.username.text,this.newScore.score);
+        this.saveScore(this.username.text, this.newScore.score);
         this.game.state.start('ScoreState');
     }
-  }else{
+   }else{
     if(this.username.text != "" && startGame ){
-      console.log(this.username.text);
-      VerticalMario.GameState.highScores.push({
-        _id:"blank",
-        name: this.username.text,
-        score: this.newScore.score});
-
-      $.ajax({
-          type: "POST",
-          url: '/Score/Create',
-          data:{
-            name: this.username.text,
-            score: this.newScore.score
-          },
-          success: function(response){
-              console.log(response);
-          } 
-      });
+      console.log("Add score function starting");
+      this.addScore(this.username.text, this.newScore.score);
+      this.saveScore(this.username.text, this.newScore.score);
       this.game.state.start('ScoreState');
    }
   }
-    },
+},
+  saveScore: function(username, score){
+    $.ajax({
+      type: "POST",
+      url: '/Score/Create',
+      data:{
+        name: username,
+        score: score
+      },
+      success: function(response){
+          console.log(response);
+      } 
+    });
+  },
+
+  addScore: function(username, score){
+    VerticalMario.GameState.highScores.push({
+      _id:"blank",
+      name: username,
+      score: score});
+  },
 
   deleteLetter: function(){
     this.username.text = "";
@@ -100,6 +92,7 @@ VerticalMario.InputScoreState = {
       url: '/Score',
       async: false,
       success: function(response){
+        console.log(response);
         VerticalMario.GameState.highScores = response;
       }
       });

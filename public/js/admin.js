@@ -17,14 +17,15 @@ export default class Admin{
                 console.log("RESONSE FROM SERVER");
                 var div = document.createElement("div");
                 div.id= response.scoreId;
+                div.className="flash"
                 div.innerHTML = `
-                    <div class="alert ${response.flash_type}">
+                    <div class="flash-edit alert ${response.flash_type}">
                     ${response.message}.
                     </div>`
                $("#myList").prepend(div);
                 console.log(div);
                 
-                $('#' + response.scoreId).fadeOut(2000);
+                $('#' + response.scoreId).fadeOut(3000);
     
             },
             error: function(xhr) {
@@ -45,14 +46,15 @@ export default class Admin{
     
                 var div = document.createElement("div");
                 div.id= 'd'+ response.scoreId;
+                div.className="flash"
                 div.innerHTML = `
-                    <div class="alert ${response.flash_type}">
+                    <div class="flash-delete alert ${response.flash_type}">
                     ${response.message}.
                     </div>`
     
                $("#myList").prepend(div);
     
-                $('#d' + response.scoreId).fadeOut(2000);
+                $('#d' + response.scoreId).fadeOut(3000);
     
                 var el = document.getElementById("div_"+response.scoreId);
                 el.remove();
