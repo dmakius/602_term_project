@@ -63,6 +63,13 @@ nav + h1 {
    background-color: rgb(191, 234, 252);
 }
 
+#myList > div:nth-child(even){
+    background-color: #f0f1f1;
+}
+#myList > div{
+    border-radius: 5%;
+}
+
 
 .delete{
     margin:5px;
@@ -78,15 +85,6 @@ nav + h1 {
 .edit::after{
     content: "O";
     margin-left: 15px;
-}
-
-/* Disable adjacent botton when button is pressed */
-.delete  ~ button:hover, .delete ~ button:active{
-    pointer-events: none;
-}
-
-.edit  ~ button:hover, .edit ~ button:active{
-    pointer-events: none;
 }
 
 
@@ -107,7 +105,7 @@ input[type=submit]:hover {
     color: black
 }
 
-.col:last-child button{
+.col:last-child > button{
     float: right;
     margin-left: 10px;
    
