@@ -61,14 +61,14 @@ button span{
     font-size:72px ;
 }
 
-.roundButton:hover {
+.roundButton:hover, .roundButton:active {
     background-color:#aaa;
 }
 .roundButton span:hover {
     opacity: 0.5;
 }
 
-#shootBtn:hover {
+#shootBtn:hover,#shootBtn:active {
     background-color:#aaa;
 }
 #shootBtn span:hover {
