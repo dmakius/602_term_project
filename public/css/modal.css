@@ -14,9 +14,7 @@
     box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
   }
 
-  .modal::backdrop {
-    background-color: green;
-  }
+
   
   /* Modal Content */
   .modal-content {
@@ -38,8 +36,7 @@
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;

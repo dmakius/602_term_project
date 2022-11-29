@@ -1,5 +1,6 @@
-hr{
-    margin:0px;
+:root {
+    touch-action: pan-x pan-y;
+    height: 100% 
 }
 canvas {
     display : block;   
@@ -7,14 +8,34 @@ canvas {
     box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
 }
 
+
+hr{
+    margin:0px;
+}
+
+/* Nav Bar */
 .navbar{
     position: sticky;
     top: 0px;
 }
+.nav-item a:hover{
+    background-color: #e5e5e5;
+    
+}
 
-.flashes{
+.navbar-brand:hover{
+    color: #e5e5e5;
+    
+}
+.navbar-brand::first-letter{
+    text-transform: uppercase;
+    font-weight: 1000;
+}
+
+nav + h1 {
     position: sticky;
 }
+
 
 #mobile-promp{
     display : block;   
@@ -22,12 +43,7 @@ canvas {
     display:none;
 }
 
-:root {
-    touch-action: pan-x pan-y;
-    height: 100% 
-  }
-
-  /* Must use at least 10 descendent selectors */
+/* Admin Page */
 #myList div div {
     padding:10px;
     border-radius:15px;
@@ -48,27 +64,11 @@ canvas {
 }
 
 
- 
-  /* Must use at least 10 unique adjacent selectors */
-
-
-/* Must have some ID selectors */
-/* Must have 2+ different class selectors. */
-
-
-/* 5 or more pseudo element selectors. */
-
-.glyphicon.glyphicon-one-fine-empty-dot::before {
-    content:"\25cb";
-    font-size: 2em;
+.delete{
+    margin:5px;
 }
-.glyphicon.glyphicon-one-fine-full-dot::before {
-    content:"\25cf";
-    font-size: 3em;
-}
-.navbar-brand::first-letter{
-    text-transform: uppercase;
-    font-weight: 1000;
+.edit{
+    margin:5px;
 }
 
 .delete::after{
@@ -80,21 +80,27 @@ canvas {
     margin-left: 15px;
 }
 
-/* 5 or more pseudo class selectors */
-
-.nav-item a:hover{
-    background-color: #e5e5e5;
-    
+/* Disable adjacent botton when button is pressed */
+.delete  ~ button:hover, .delete ~ button:active{
+    pointer-events: none;
 }
 
-.navbar-brand:hover{
-    color: #e5e5e5;
-    
+.edit  ~ button:hover, .edit ~ button:active{
+    pointer-events: none;
 }
 
-input:hover {
-    /* border: 1px solid rgb(63, 63, 112); */
+
+br+h1{
+    position: sticky;
 }
+
+br + a:hover{
+    font-style: italic;
+ }
+ 
+.row + hr:hover{
+    border-top: 1px dotted black;
+ }
 
 
 input[type=submit]:hover {
@@ -105,6 +111,11 @@ input[type=submit]:hover {
     float: right;
     margin-left: 10px;
    
+}
+
+/* Flashes */
+.flashes{
+    position: sticky;
 }
 
 .flash{
@@ -128,3 +139,4 @@ input[type=submit]:hover {
 .flash-delete::before{
     content:'❌';
 }
+
