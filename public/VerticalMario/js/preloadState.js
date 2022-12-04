@@ -13,11 +13,10 @@ VerticalMario.PreloadState = {
     this.game.load.spritesheet('goomba','public/VerticalMario/assets/goomba.png', 32, 32);
   
     this.game.load.image('coin', 'public/VerticalMario/assets/coin.png');
-
     this.game.load.image('brick', 'public/VerticalMario/assets/block.png', 32, 32);
     this.game.load.image('main_title', 'public/VerticalMario/assets/main_title.gif');
     this.game.load.image('200pts','public/VerticalMario/assets/200.gif');
-
+  
 
     //SOUNDS
     this.game.load.audio('mainTheme', 'https://s3-us-west-2.amazonaws.com/makoverwebsite/platformerGame/assets/sounds/main-theme.mp3');
